@@ -7,38 +7,37 @@ import NavBar from "./components/NavBar/NavBar";
 import SortBar from "./components/SortBar/SortBar";
 import { User } from "./models/User";
 
-function App() {
+type SortLabel = "dob.age" | "gender" | "nat" | "location.city";
 
-  const [currentUser, setCurrentUser] = useState<User | undefined>();
-  const [sortLabel, setSortLabel] = useState<string>("");
+export default function App() {
 
-  const { refetch, isLoading, data: users } = useQuery<User[]>('users', getAll)
+	const [currentUser, setCurrentUser] = useState<User | undefined>();
+	const [sortLabel, setSortLabel] = useState<SortLabel>("dob.age");
+	const [sortDirection, setSortDirection] = useState<boolean>(true); 
 
-  return (
-    <div className="App min-h-screen bg-slate-800 text-white">
-      <NavBar />
-      <SortBar label={sortLabel} setLabel={setSortLabel} refetch={refetch} isLoading={isLoading} />
-      <main className="flex px-2">
-        {isLoading ?
-          <div className="w-full flex justify-center mt-10">
-            <p className="w-max m-auto animate-pulse">Loading...</p>
-          </div>
-          :
-          <>
-            <List users={users} setUser={setCurrentUser} />
-            <Detail user={currentUser} />
-          </>
-        }
-      </main>
-    </div>
-  );
-}
+	const { refetch, isLoading, data: users } = useQuery<User[]>('users', getAll)
 
-export default App;
-
-
-type Order = "DESC" | "ASC";
-
-const sort = (users: User[], label: string, order: Order = "DESC"): User[] => {
-  return users;
+	return (
+		<div className="App min-h-screen bg-slate-800 text-white">
+			<NavBar />
+			<SortBar 
+				setLabel={(e: any) => setSortLabel(e.target.value)} 
+				setSortDirection={() => setSortDirection(!sortDirection)} 
+				refetch={refetch} 
+				isLoading={isLoading} 
+			/>
+			<main className="flex px-2">
+				{isLoading ?
+					<div className="w-full flex justify-center mt-10">
+						<p className="w-max m-auto animate-pulse">Loading...</p>
+					</div>
+					:
+					<>
+						<List users={users} setUser={setCurrentUser} sortLabel={sortLabel} sortDirection={sortDirection} />
+						<Detail user={currentUser} />
+					</>
+				}
+			</main>
+		</div>
+	);
 }
