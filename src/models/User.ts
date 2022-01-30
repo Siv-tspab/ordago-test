@@ -1,4 +1,5 @@
 export interface User {
+    [key: string]: any;
     cell: "414-347-6911";
     dob: { age: number; date: Date };
     email: string;

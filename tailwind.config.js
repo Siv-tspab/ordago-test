@@ -611,6 +611,7 @@ module.exports = {
     }),
     maxHeight: ({ theme }) => ({
       ...theme('spacing'),
+      '1/2': '50vh',
       full: '100%',
       screen: '100vh',
       min: 'min-content',
@@ -631,6 +632,9 @@ module.exports = {
       '5xl': '64rem',
       '6xl': '72rem',
       '7xl': '80rem',
+      '1/4': '25%',
+      '1/3': '33.3333333%',
+      '3/4': '75%',
       full: '100%',
       min: 'min-content',
       max: 'max-content',
@@ -648,6 +652,7 @@ module.exports = {
     },
     minWidth: {
       0: '0px',
+      '2/5': '40%',
       full: '100%',
       min: 'min-content',
       max: 'max-content',
