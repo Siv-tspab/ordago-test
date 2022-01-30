@@ -3,3 +3,9 @@
 @tailwind components;
 
 @tailwind utilities;
+
+@layer components {
+    .input {
+        @apply px-2 py-1 outline-none rounded-lg bg-slate-600;
+    }
+}
