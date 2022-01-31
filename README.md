@@ -2,6 +2,17 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+In order to test the application, you can follow these steps:
+
+1. git clone
+```git clone https://github.com/Siv-tspab/ordago-test.git```
+
+2. yarn install
+```yarn install```
+
+3. yarn start
+```yarn start```
+
 ## Available Scripts
 
 In the project directory, you can run:
