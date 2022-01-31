@@ -34,7 +34,7 @@ export default function App() {
 					</div>
 					:
 					<>
-						<List users={users} setUser={setCurrentUser} sortLabel={sortLabel} sortDirection={sortDirection} />
+						{users && <List users={users} setUser={setCurrentUser} sortLabel={sortLabel} sortDirection={sortDirection} />}
 						<Detail user={currentUser} />
 					</>
 				}
