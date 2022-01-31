@@ -38,7 +38,7 @@ export default function List({ users, setUser, sortLabel, sortDirection }: ListP
             {users?.map((user: User) => (
                 <div
                     key={user.cell}
-                    className={"w-1/3 lg:w-1/4 max-w-1/2 lg:max-w-1/3 h-60 hover:h-80 hover:grow m-5 bg-no-repeat bg-cover rounded-xl rounded-b-2xl ease-in-out duration-300 cursor-pointer shadow-xl"}
+                    className={"w-3/4 md:w-1/3 lg:w-1/4 max-w-full md:max-w-1/2 lg:max-w-1/3 h-60 hover:h-80 hover:grow m-2 lg:m-5 bg-no-repeat bg-cover bg-center rounded-xl rounded-b-2xl ease-in-out duration-300 cursor-pointer shadow-xl"}
                     onClick={() => setUser(user)}
                     style={{ backgroundImage: `url(${user?.picture.large})` }}
                 >

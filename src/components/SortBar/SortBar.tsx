@@ -8,7 +8,7 @@ interface SortBarProps {
 }
 
 export default function SortBar({ setLabel, refetch, isLoading, setSortDirection }: SortBarProps) {
-    return <div className="m-5 p-2 flex items-center justify-between">
+    return <div className="m-2 lg:m-5 p-2 flex items-center justify-between">
         <div className="flex items-center">
             <select className="input text-xl cursor-pointer mr-3" name="select" id="select" onChange={setLabel}>
                 <option value="dob.age">Age</option>
