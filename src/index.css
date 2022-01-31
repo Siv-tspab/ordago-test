@@ -8,4 +8,7 @@
     .input {
         @apply px-2 py-1 outline-none rounded-lg bg-slate-600;
     }
+    .footer-title {
+        @apply text-slate-700 font-bold text-4xl pb-2;
+    }
 }

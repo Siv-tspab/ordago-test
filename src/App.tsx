@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useQuery } from "react-query";
 import { getAll } from "./api/api";
 import Detail from "./components/Detail/Detail";
+import Footer from "./components/Footer/Footer";
 import List from "./components/List/List";
 import NavBar from "./components/NavBar/NavBar";
 import SortBar from "./components/SortBar/SortBar";
@@ -38,6 +39,7 @@ export default function App() {
 					</>
 				}
 			</main>
+			<Footer/>
 		</div>
 	);
 }
